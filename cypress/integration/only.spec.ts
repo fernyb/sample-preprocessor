@@ -1,6 +1,9 @@
 // sample start
 describe('Describe block', () => {
-  it.only('Run this test without tag', () => { });
+  it('Run this test without tag', () => { 
+    console.log("Will run")
+  });
+
   it.only('smoke', 'Run this test with tag', () => { });
 
   it('Skip this test without tag', () => { });

@@ -1,6 +1,10 @@
 {
   "compilerOptions": {
-    "baseUrl": "https://github.com/annaet/cypress-tags-example",
+    "strict": true,
+    "baseUrl": "cypress",
+    "paths": {
+      "controllers/*": ["fixtures/controllers/*"]
+    },
     "target": "es2016",
     "types": [],
     "allowSyntheticDefaultImports": true,
@@ -8,9 +12,9 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "module": "commonjs",
-    "declaration": true,
-    "outDir": "./dist",
-    "strict": true
+    "moduleResolution": "Node",
+    "declaration": true
+    // "outDir": "./dist",
   },
   "include": [
     "**/*.ts"

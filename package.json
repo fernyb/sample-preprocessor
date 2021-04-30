@@ -20,9 +20,23 @@
   },
   "dependencies": {
     "cypress": "^7.1.0",
-    "cypress-tags": "0.0.20"
+    "cypress-tags": "^0.0.20",
+    "tsify": "^5.0.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@cypress/browserify-preprocessor": "^3.0.1",
+    "aliasify": "^2.1.0",
     "typescript": "^4.2.4"
+  },
+  "browserify": {
+    "transform": [
+      "aliasify"
+    ]
+  },
+  "aliasify": {
+    "aliases": {
+      "controllers": "fixtures/controllers"
+    }
   }
 }

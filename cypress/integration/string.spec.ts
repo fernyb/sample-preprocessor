@@ -17,3 +17,16 @@ describe('Run tests with tagged it statements', () => {
   it(['smoke', 'wip'], 'I am a wip smoke test', () => { });
   it.skip(['smoke', 'wip', 'regression'], 'I have tags and should always be skipped', () => { });
 });
+
+describe("Batch Invoice", () => {
+  it("can post batch", () => {
+    expect(true).to.be.false
+  });
+
+  it("acc", "can unpost batch", () => {
+    expect(true).to.be.false
+  });
+
+  it("can delete")
+  it("can edit")
+});

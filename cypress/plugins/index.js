@@ -12,6 +12,7 @@
 // This function is called when a project is opened or re-opened (e.g. due to
 // the project's config changing)
 const tagify = require('cypress-tags');
+const browserify = require('@cypress/browserify-preprocessor');
 
 /**
  * @type {Cypress.PluginConfig}
@@ -19,5 +20,22 @@ const tagify = require('cypress-tags');
 module.exports = (on, config) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
-  on('file:preprocessor', tagify(config));
+  //on('file:preprocessor', tagify(config));
+
+  const options = {
+    typescript: require.resolve('typescript'),
+    browserifyOptions: {
+      extensions: ['.ts'],
+      plugin: [
+        ['tsify']
+      ],
+      paths: [
+        "cypress/fixtures",
+        "cypress",
+        "fixtures"
+      ]
+    },
+  };
+
+  on('file:preprocessor', browserify(options));
 };
